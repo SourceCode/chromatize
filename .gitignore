@@ -1,0 +1,8 @@
+# PROJECT FILES #
+#################
+resources/
+chromatize.json
+
+# IDE FILES #
+#############
+.idea/
