@@ -1,3 +1,7 @@
+/*
+ * Creates the chromatize store in the window scope
+ * @type object
+ */
 window.chromatizeStore = {};
 window.chromatizeStore.enabled = false;
 
@@ -6,25 +10,19 @@ chrome.devtools.panels.create("Chromatize", "icon.png", "devpanel.html", functio
     panel.onShown.addListener(function(panelWindow) {
         if (runOnce) return;
         runOnce = true;
-        // Do something, eg appending the text "Hello!" to the devtools panel
-        //panelWindow.document.body.appendChild(document.createTextNode('Hello!'));
         window.chromatize = function(content)
         {
-            //panelWindow.document.getElementById("chromatize-message").appendChild(document.createTextNode(content));
-            //panelWindow.document.body.appendChild(document.createTextNode(content));
-            //console.log(panelWindow.$);
             $ = panelWindow.$; //set $ to jQuery
             $("#chromatize-message").append("<p>" + content + "</p>");
         }
     });
 });
 
+/**
+ * Adds a listener for network requests finished
+ */
 chrome.devtools.network.onRequestFinished.addListener(function(req) {
-
     console.log(req);
-    //console.log(window.chromatize);
-    //console.log(chrome.devtools.panels);
-    //panel.panelTest(req.url);
     var reqURL = req.request.url;
 
     if (window.chromatizeStore.enabled === false)
