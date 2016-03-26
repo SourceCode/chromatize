@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "author": "Ryan Rentfro",
+  "name": "Chromatize",
+  "description": "Chromatize Configurable App Monitor Engine",
+  "version": "0.0.1",
+  "homepage_url": "http://github.com/SourceCode/chromatize",
+  "minimum_chrome_version": "18.0",
+  "devtools_page": "devtools.html",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}

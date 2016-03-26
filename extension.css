@@ -1,0 +1,8 @@
+.console-container
+{
+    font-size: 10px;
+}
+
+.console-container p {
+    margin-top: 2px;
+}
